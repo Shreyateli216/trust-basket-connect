@@ -54,139 +54,31 @@ const Register = () => {
                 </TabsList>
 
                 <TabsContent value="vendor">
-                  <form onSubmit={handleRegister} className="space-y-4">
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="firstName">First Name</Label>
-                        <Input id="firstName" placeholder="John" required />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="lastName">Last Name</Label>
-                        <Input id="lastName" placeholder="Doe" required />
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email</Label>
-                      <Input id="email" type="email" placeholder="john@example.com" required />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">Phone Number</Label>
-                      <Input id="phone" type="tel" placeholder="+91 9876543210" required />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="city">City</Label>
-                      <Input id="city" placeholder="Mumbai" required />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="foodType">Type of Food</Label>
-                      <Select>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select food type" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="chaat">Chaat</SelectItem>
-                          <SelectItem value="south-indian">South Indian</SelectItem>
-                          <SelectItem value="chinese">Chinese</SelectItem>
-                          <SelectItem value="beverages">Beverages</SelectItem>
-                          <SelectItem value="sweets">Sweets</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="password">Password</Label>
-                      <div className="relative">
-                        <Input
-                          id="password"
-                          type={showPassword ? "text" : "password"}
-                          placeholder="Create a strong password"
-                          required
-                        />
-                        <Button
-                          type="button"
-                          variant="ghost"
-                          size="sm"
-                          className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
-                          onClick={() => setShowPassword(!showPassword)}
-                        >
-                          {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-                        </Button>
-                      </div>
-                    </div>
-
-                    <Button type="submit" className="w-full">
-                      Register as Vendor
+                  <div className="text-center space-y-4">
+                    <p className="text-muted-foreground">
+                      Ready to join as a vendor? Complete our detailed registration to get verified.
+                    </p>
+                    <Button 
+                      className="w-full" 
+                      onClick={() => navigate('/vendor-registration')}
+                    >
+                      Continue Vendor Registration
                     </Button>
-                  </form>
+                  </div>
                 </TabsContent>
 
                 <TabsContent value="supplier">
-                  <form onSubmit={handleRegister} className="space-y-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="businessName">Business Name</Label>
-                      <Input id="businessName" placeholder="ABC Suppliers" required />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="ownerName">Owner Name</Label>
-                      <Input id="ownerName" placeholder="John Doe" required />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email</Label>
-                      <Input id="email" type="email" placeholder="business@example.com" required />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">Phone Number</Label>
-                      <Input id="phone" type="tel" placeholder="+91 9876543210" required />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="deliveryArea">Delivery Area</Label>
-                      <Input id="deliveryArea" placeholder="Mumbai, Pune" required />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="gst">GST Number</Label>
-                      <Input id="gst" placeholder="22AAAAA0000A1Z5" />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="fssai">FSSAI License (if applicable)</Label>
-                      <Input id="fssai" placeholder="12345678901234" />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="password">Password</Label>
-                      <div className="relative">
-                        <Input
-                          id="password"
-                          type={showPassword ? "text" : "password"}
-                          placeholder="Create a strong password"
-                          required
-                        />
-                        <Button
-                          type="button"
-                          variant="ghost"
-                          size="sm"
-                          className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
-                          onClick={() => setShowPassword(!showPassword)}
-                        >
-                          {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-                        </Button>
-                      </div>
-                    </div>
-
-                    <Button type="submit" className="w-full">
-                      Register as Supplier
+                  <div className="text-center space-y-4">
+                    <p className="text-muted-foreground">
+                      Ready to start selling? Complete our supplier registration to list your products.
+                    </p>
+                    <Button 
+                      className="w-full"
+                      onClick={() => navigate('/supplier-registration')}
+                    >
+                      Continue Supplier Registration
                     </Button>
-                  </form>
+                  </div>
                 </TabsContent>
 
                 <div className="mt-6 text-center">
